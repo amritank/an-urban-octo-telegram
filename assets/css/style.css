@@ -8,6 +8,8 @@ body {
     background-color: #d9dcd6;
 }
 
+/* Replacing the header class with the header element type.
+and consolidating all header and header child element styles. */
 header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -24,6 +26,7 @@ header h1 .seo {
     color: #d9dcd6;
 }
 
+/* Replaced the header div with a header nav which will contain the ul and li elements*/
 header nav {
     padding-top: 15px;
     margin-right: 20px;
@@ -46,10 +49,15 @@ a {
     text-decoration: none;
 }
 
-/* TODO: the default p tag font size is 16px. Hence commenting it out. 
+
+/* For fonts its better to use rem instead of an absolute value. So
+we can set them with refrence to the root element: HTML. Setting the font
+value for 1rem which sets the font size to that of the root element 
+which is generally 16px.
+*/
 p {
-    font-size: 16px;
-} */
+    font-size: 1rem;
+}
 
 .hero {
     height: 800px;
@@ -58,6 +66,13 @@ p {
     background-image: url("../images/digital-marketing-meeting.jpg");
     background-size: cover;
     background-position: center;
+}
+
+/* Consolidating all styles pretaining to the content container*/
+.content {
+    width: 75%;
+    display: inline-block;
+    margin-left: 20px;
 }
 
 .float-left {
@@ -70,12 +85,11 @@ p {
     margin-left: 25px;
 }
 
-.content {
-    width: 75%;
-    display: inline-block;
-    margin-left: 20px;
-}
-
+/*
+Since the style for the sections inside the content container were the same, modified the selector
+to a more generic one instead of individually refrencing the classes. Same thought process was 
+applied to the img and h2 tags under the section in the content container. 
+*/
 .content section {
     margin-bottom: 20px;
     padding: 50px;
@@ -94,10 +108,22 @@ p {
     font-size: 36px;
 }
 
+/*
+Since the style for the sections inside the benefits container were the same, modified the selector
+to a more generic one instead of individually refrencing the classes. Same thought process was 
+applied to the img and h3 tags under the section in the benefits container. 
+*/
 .benefits {
     margin-right: 20px;
     padding: 20px;
-    /* TODO: This does not seem to do anything. */
+    /* 
+    The clear attribute is generally applied to the elements that wrap around the element with the float attribute. 
+    This is done so that the elements with the clear attribute do no wrap around and are stacked under the 
+    element instead. 
+
+    This attribute basically does not add any affect hence commenting it out.
+    */
+
     /* clear: both; */
 
     float: right;
